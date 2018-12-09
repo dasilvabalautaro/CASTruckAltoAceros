@@ -1,0 +1,17 @@
+CREATE TABLE [dbo].[WEIGHTCHILD](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[WEIGHINGID] [int] NOT NULL,
+	[INSIDE] [datetime] NOT NULL,
+	[OUTSIDE] [datetime] NULL,
+	[WEIGHT1] [numeric](7, 2) NOT NULL,
+	[WEIGHT4] [numeric](7, 2) NOT NULL,
+	[WEIGHT2] [numeric](7, 2) NOT NULL,
+	[WEIGHT3] [numeric](7, 2) NOT NULL,
+	[WEIGHTBRUTO] [numeric](7, 2) NOT NULL,
+	[WEIGHTTARA] [numeric](7, 2) NOT NULL,
+	[WEIGHTNETO] [numeric](7, 2) NOT NULL,
+	[OBSERVATION] [varchar](200) NULL,
+	constraint PK_WEIGHTCHILD primary key (ID),
+	constraint FK_WEIGHTCHILD_REFERENCE_WEIGHING foreign key (WEIGHINGID)
+      references WEIGHING (WEIGHINGID)
+ )
